@@ -1,0 +1,21 @@
+package com.wung.sample
+
+import com.wung.sample.model.Product;
+
+rule "Offer for Diamond"
+    when
+        product : Product(type == "diamond")
+    then
+        product.setDiscount(15);
+    end
+
+
+rule "Offer for Gold"
+    when
+        product : Product(type == "gold")
+    then
+        product.setDiscount(25);
+    end
+
+
+

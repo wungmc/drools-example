@@ -1,6 +1,6 @@
 package com.wung.sample
 
-import com.wung.sample.DroolsTest.Message;
+import com.wung.sample.model.Message;
 
 
 rule "Goodbye2"
