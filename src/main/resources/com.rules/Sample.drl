@@ -1,0 +1,24 @@
+package com.wung.sample
+
+import com.wung.sample.DroolsTest.Message;
+
+
+rule "Hello World"
+    when
+        m : Message(status == Message.HELLO, myMessage : message)
+    then
+        System.out.println(myMessage);
+        m.setMessage("Goodbye World");
+        m.setStatus(Message.GOODBYE);
+        update(m);
+end
+
+
+rule "Goodbye"
+    when
+        $m : Message(status == Message.GOODBYE, myMessage : message)
+    then
+        System.out.println(myMessage);
+end
+
+

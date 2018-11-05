@@ -1,0 +1,13 @@
+package com.wung.sample
+
+import com.wung.sample.DroolsTest.Message;
+
+
+rule "Goodbye2"
+    when
+        $m : Message(message.equals("Goodbye World"))
+    then
+        System.out.println("Goodbye2:" + $m.getMessage());
+end
+
+
